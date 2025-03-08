@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun Wishlist() {
-    Text("Wishlist")
+    Text("I love this place")
 }
