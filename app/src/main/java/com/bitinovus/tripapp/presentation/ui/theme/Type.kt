@@ -1,4 +1,4 @@
-package com.bitinovus.tripapp.ui.theme
+package com.bitinovus.tripapp.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

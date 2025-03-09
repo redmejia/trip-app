@@ -1,4 +1,4 @@
-package com.bitinovus.tripapp.ui.theme
+package com.bitinovus.tripapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
