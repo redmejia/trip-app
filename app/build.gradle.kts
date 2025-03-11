@@ -41,10 +41,17 @@ android {
 
 dependencies {
     val nav_version = "2.8.8"
+    val lifecycle_version = "2.8.7"
+    
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     // COIL
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // ViewModel utilities for Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
