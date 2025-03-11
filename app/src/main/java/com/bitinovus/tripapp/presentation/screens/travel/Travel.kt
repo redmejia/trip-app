@@ -2,7 +2,8 @@ package com.bitinovus.tripapp.presentation.screens.travel
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +23,7 @@ import com.bitinovus.tripapp.presentation.components.header.Header
 import com.bitinovus.tripapp.presentation.components.imagecard.ImageCard
 import com.bitinovus.tripapp.presentation.components.placebox.PlaceBox
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun Travel() {
 
@@ -29,13 +31,13 @@ fun Travel() {
     val placesList = listOf(
         Place(
             id = 1,
-            image = "https://picsum.photos/id/66/5000",
+            image = "https://picsum.photos/id/17/5000",
             isSelected = false,
             description = ""
         ),
         Place(
             id = 2,
-            image = "https://picsum.photos/id/17/5000",
+            image = "https://picsum.photos/id/66/5000",
             isSelected = false,
             description = ""
         ),
@@ -111,27 +113,37 @@ fun Travel() {
                         fontWeight = FontWeight.Medium
                     )
                 ) {
-                    Row(
+                    val bannersList = listOf(
+                        Place(
+                            image = "https://picsum.photos/id/16/200",
+                            isSelected = false,
+                            id = 1,
+                            description = "A Lake's Embrace"
+                        ),
+                        Place(
+                            image = "https://picsum.photos/id/29/200",
+                            isSelected = false,
+                            id = 1,
+                            description = "Serenity in the Mountains"
+                        ),
+
+                        )
+                    FlowRow(
                         modifier = Modifier
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
+                        maxItemsInEachRow = 2
                     ) {
-                        ImageCard(
-                            imageURL = "https://picsum.photos/id/16/311/310",
-                            placeName = "A Lake's Embrace",
-                            textStyle = TextStyle(
-                                fontSize = 13.sp
+                        repeat(bannersList.size) { index ->
+                            ImageCard(
+                                imageURL = bannersList[index].image,
+                                placeName = bannersList[index].description,
+                                textStyle = TextStyle(
+                                    fontSize = 13.sp
+                                )
                             )
-                        )
-                        ImageCard(
-                            imageURL = "https://picsum.photos/id/29/311/310",
-                            placeName = "Serenity in the Mountains",
-                            textStyle = TextStyle(
-                                fontSize = 13.sp
-                            )
-                        )
+                        }
                     }
-
                     Spacer(Modifier.height(20.dp))
                 }
                 Spacer(Modifier.height(30.dp))

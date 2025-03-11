@@ -1,6 +1,8 @@
 package com.bitinovus.tripapp.presentation.components.imagecard
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LocalTextStyle
@@ -19,9 +21,13 @@ fun ImageCard(
     placeName: String,
     textStyle: TextStyle = LocalTextStyle.current,
 ) {
+
     Column {
         AsyncImage(
-            modifier = Modifier.clip(shape = RoundedCornerShape(10.dp)),
+            modifier = Modifier
+                .fillMaxWidth(0.48f)
+                .aspectRatio(1f)
+                .clip(shape = RoundedCornerShape(10.dp)),
             model = imageURL,
             contentScale = ContentScale.Crop,
             contentDescription = null
@@ -32,4 +38,5 @@ fun ImageCard(
             style = textStyle
         )
     }
+
 }
