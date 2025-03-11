@@ -27,7 +27,7 @@ import com.bitinovus.tripapp.presentation.components.placebox.PlaceBox
 @Composable
 fun Travel() {
 
-    // test data
+    // Test data
     val placesList = listOf(
         Place(
             id = 1,
@@ -157,6 +157,5 @@ fun Travel() {
                 )
             }
         }
-
     }
 }

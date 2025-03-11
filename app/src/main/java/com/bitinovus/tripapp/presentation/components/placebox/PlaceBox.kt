@@ -11,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -57,6 +58,8 @@ fun PlaceBox(
                     imageVector = if (isSelected) Icons.Default.Favorite
                     else Icons.Default.FavoriteBorder,
                     contentDescription = null,
+                    tint = if (isSelected) Color.Red
+                    else LocalContentColor.current
                 )
             }
 

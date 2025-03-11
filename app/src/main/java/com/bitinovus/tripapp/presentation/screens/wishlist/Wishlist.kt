@@ -1,27 +1,71 @@
 package com.bitinovus.tripapp.presentation.screens.wishlist
 
-import androidx.compose.foundation.background
-import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.sp
+import com.bitinovus.tripapp.data.models.Place
+import com.bitinovus.tripapp.presentation.components.placebox.PlaceBox
 
 @Composable
 fun Wishlist() {
+
+    // Test data user selected favorite place from travel screen
+    val wishList = listOf(
+        Place(
+            id = 1,
+            image = "https://picsum.photos/id/17/5000",
+            isSelected = true,
+            description = ""
+        ),
+        Place(
+            id = 3,
+            image = "https://picsum.photos/id/70/5000",
+            isSelected = true,
+            description = ""
+        ),
+        Place(
+            id = 4,
+            image = "https://picsum.photos/id/83/5000",
+            isSelected = true,
+            description = ""
+        ),
+        Place(
+            id = 8,
+            image = "https://picsum.photos/id/120/5000",
+            isSelected = true,
+            description = ""
+        ),
+        Place(
+            id = 10,
+            image = "https://picsum.photos/id/165/5000",
+            isSelected = true,
+            description = ""
+        ),
+        Place(
+            id = 11,
+            image = "https://picsum.photos/id/184/5000",
+            isSelected = true,
+            description = ""
+        )
+    )
     Box(
         modifier = Modifier
-            .background(color = Color(0xFF8352b3))
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            "I love this place",
-            fontSize = 30.sp,
-            color = Color.White
-        )
+        LazyColumn {
+            items(
+                items = wishList,
+                key = { it.id }) { place ->
+                PlaceBox(
+                    isSelected = place.isSelected,
+                    image = place.image
+                )
+            }
+        }
     }
 }
