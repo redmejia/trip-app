@@ -44,7 +44,7 @@ fun Header(
                 text = title,
                 style = style
             )
-            Spacer(Modifier.height(40.dp))
+            Spacer(Modifier.height(100.dp))
             content()
         }
 
