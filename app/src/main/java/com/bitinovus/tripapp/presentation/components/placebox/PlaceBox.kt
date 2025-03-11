@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -23,6 +24,7 @@ import coil.compose.AsyncImage
 @Composable
 fun PlaceBox(
     image: String,
+    isSelected: Boolean, // like logic here
 ) {
     Box(
         modifier = Modifier
@@ -52,7 +54,8 @@ fun PlaceBox(
             ) {
                 Icon(
                     modifier = Modifier.padding(4.dp),
-                    imageVector = Icons.Default.FavoriteBorder,
+                    imageVector = if (isSelected) Icons.Default.Favorite
+                    else Icons.Default.FavoriteBorder,
                     contentDescription = null,
                 )
             }
@@ -66,6 +69,7 @@ fun PlaceBox(
 @Composable
 fun PlaceBoxPreview() {
     PlaceBox(
+        isSelected = false,
         image = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png"
     )
 }
