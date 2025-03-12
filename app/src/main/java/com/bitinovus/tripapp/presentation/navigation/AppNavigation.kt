@@ -24,9 +24,9 @@ fun AppNavigation(
             Travel(navigationViewmodel = navigationViewmodel)
         }
         composable(route = AppScreens.Wishlist.name) {
-            Wishlist()
+            Wishlist(navigationViewmodel = navigationViewmodel)
         }
-        composable(route = AppScreens.Profile.name){
+        composable(route = AppScreens.Profile.name) {
             Profile()
         }
     }

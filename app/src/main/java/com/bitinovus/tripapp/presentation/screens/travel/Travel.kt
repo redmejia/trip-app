@@ -111,7 +111,6 @@ fun Travel(
         contentAlignment = Alignment.Center
     ) {
         val lazyListState = rememberLazyListState()
-//        val displayFAB = remember { mutableStateOf(false) }
 
         val visibleNavigation by remember {
             derivedStateOf {
