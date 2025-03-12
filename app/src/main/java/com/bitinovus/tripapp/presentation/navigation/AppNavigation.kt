@@ -8,9 +8,11 @@ import androidx.navigation.compose.composable
 import com.bitinovus.tripapp.presentation.screens.profile.Profile
 import com.bitinovus.tripapp.presentation.screens.travel.Travel
 import com.bitinovus.tripapp.presentation.screens.wishlist.Wishlist
+import com.bitinovus.tripapp.presentation.viewmodels.navigationviewmodel.NavigationViewmodel
 
 @Composable
 fun AppNavigation(
+    navigationViewmodel: NavigationViewmodel,
     modifier: Modifier = Modifier,
     navHostController: NavHostController,
 ) {
@@ -19,7 +21,7 @@ fun AppNavigation(
         navController = navHostController, startDestination = AppScreens.Travel.name
     ) {
         composable(route = AppScreens.Travel.name) {
-            Travel()
+            Travel(navigationViewmodel = navigationViewmodel)
         }
         composable(route = AppScreens.Wishlist.name) {
             Wishlist()

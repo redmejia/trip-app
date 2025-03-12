@@ -42,7 +42,7 @@ android {
 dependencies {
     val nav_version = "2.8.8"
     val lifecycle_version = "2.8.7"
-    
+
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     // COIL
