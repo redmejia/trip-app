@@ -1,28 +1,30 @@
 package com.bitinovus.tripapp.presentation.screens.profile
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.sp
-import androidx.compose.ui.graphics.Color
+import com.bitinovus.tripapp.presentation.components.avatar.Avatar
 
 @Composable
 fun Profile() {
-    Box(
-        modifier = Modifier
-            .background(color = Color(0xFF9c67d1))
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            "Profile",
-            fontSize = 30.sp,
-            color = Color.White
-        )
+    Scaffold { innerPadding ->
+        Surface(
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Avatar(
+                    image = "https://picsum.photos/id/177/200"
+                )
+            }
+        }
     }
 }
 
