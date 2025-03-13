@@ -1,16 +1,12 @@
 package com.bitinovus.tripapp.presentation.components.avatar
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
-import androidx.compose.material.icons.filled.Face
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.zIndex
 
 @Composable
 fun Avatar(
@@ -29,11 +24,11 @@ fun Avatar(
 ) {
     Box(
         modifier = Modifier
-            .size(200.dp)
+            .size(150.dp)
     ) {
         AsyncImage(
             modifier = Modifier
-                .size(200.dp)
+                .size(150.dp)
                 .clip(shape = CircleShape),
             model = image,
             contentScale = ContentScale.Crop,
@@ -41,7 +36,7 @@ fun Avatar(
         )
         Box(
             modifier = Modifier
-                .padding(end = 18.dp)
+                .padding(end = 15.dp)
                 .matchParentSize(),
             contentAlignment = Alignment.TopEnd
         ) {
@@ -55,7 +50,7 @@ fun Avatar(
                     contentDescription = null,
                     tint = Color(0xFF202020),
                     modifier = Modifier
-                        .size(44.dp) // Define a proper size for visibility
+                        .size(44.dp)
                 )
             }
 
