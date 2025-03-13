@@ -1,5 +1,6 @@
 package com.bitinovus.tripapp.presentation.screens.profile
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,6 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Info
@@ -61,7 +65,6 @@ fun Profile() {
             modifier = Modifier.padding(innerPadding),
             color = Color.White,
         ) {
-
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -69,7 +72,6 @@ fun Profile() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceAround
             ) {
-
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -79,7 +81,6 @@ fun Profile() {
                     )
                     Text(text = "Sofia Doe", modifier = Modifier.padding(vertical = 10.dp))
                 }
-
                 Column {
                     optionActionsList.forEach { action ->
                         Option(
@@ -110,7 +111,7 @@ fun Profile() {
                 Option(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(15.dp),
+                        .padding(20.dp),
                     colors = CardDefaults.cardColors(
                         containerColor = Color.White
                     ),

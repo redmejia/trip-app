@@ -69,23 +69,10 @@ fun BottomTab(navController: NavHostController) {
                         }
                         .height(70.dp),
                     icon = {
-                        Box(
-                            modifier = Modifier
-                                .width(60.dp)
-                                .height(30.dp)
-                                .background(
-                                    color = if (currentRoute == screen.route) Color(0xFF323232)
-                                    else Color(0xFF202020),
-                                    shape = RoundedCornerShape(50.dp)
-                                ),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                painter = painterResource(id = screen.icon),
-                                contentDescription = screen.title,
-                                tint = Color.White
-                            )
-                        }
+                        NavigationIcon(
+                            screen = screen,
+                            isSelected = currentRoute == screen.route
+                        )
                     },
                     label = {
                         Text(
@@ -101,6 +88,7 @@ fun BottomTab(navController: NavHostController) {
     }
 }
 
+
 @Composable
 private fun BarItem(
     modifier: Modifier = Modifier,
@@ -114,5 +102,26 @@ private fun BarItem(
     ) {
         icon()
         label()
+    }
+}
+
+@Composable
+fun NavigationIcon(screen: BottomBarItem, isSelected: Boolean) {
+    Box(
+        modifier = Modifier
+            .width(60.dp)
+            .height(30.dp)
+            .background(
+                color = if (isSelected) Color(0xFF323232)
+                else Color(0xFF202020),
+                shape = RoundedCornerShape(50.dp)
+            ),
+        contentAlignment = Alignment.Center
+    ) {
+        Icon(
+            painter = painterResource(id = screen.icon),
+            contentDescription = screen.title,
+            tint = Color.White
+        )
     }
 }
