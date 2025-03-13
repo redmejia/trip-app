@@ -106,7 +106,7 @@ private fun BarItem(
 }
 
 @Composable
-fun NavigationIcon(screen: BottomBarItem, isSelected: Boolean) {
+private fun NavigationIcon(screen: BottomBarItem, isSelected: Boolean) {
     Box(
         modifier = Modifier
             .width(60.dp)
